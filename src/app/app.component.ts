@@ -1,20 +1,27 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './components/header/header.component';
-import { HomeComponent } from './components/home/home.component';
-import { SistemasComponent } from './components/sistemas/sistemas.component';
-import { SprintsComponent } from './components/sprints/sprints.component';
+import { RouterLink, RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-root',
   imports: [
+    CommonModule,
     RouterOutlet,
-    HeaderComponent
+    RouterLink,
+    MatIconModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'evidence-manager';
+  tituloDescricao = 'Sistema de gestão de sprints do SEFIN'
+
+  headerMenu = [
+    {name: 'Home', route: '', icon: 'home'},
+    {name: 'Sistemas', route: '/sistemas', icon: 'apps'},
+    {name: 'Sprints', route: '/sprints', icon: 'table'},
+  ]
 }

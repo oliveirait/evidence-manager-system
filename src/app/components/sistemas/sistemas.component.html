@@ -1,10 +1,53 @@
 
-<h2>Categorias Teste</h2>
-<button >buscar dados</button>
-<div >
-    <ul *ngFor="let item of list">
-        <li>
-            {{item.id}}
+<h2 class="py-2 mx-4">Lista de Sistemas</h2>
+<div class="p-4 w-full rounded-xl flex flex-col items-center">
+    <ul class="flex w-full" *ngFor="let item of list">
+        <li class="card-body shadow-stone-900 border-gray-800 shadow-md transition ease-in duration-100 rounded-2xl p-4">
+            <div class="flex flex-row items-start justify-start gap-2 pb-4">
+                <h5 class="card-title">{{item.nome}}</h5>
+                <p> - </p>
+                <p class="card-text">{{item.descricao}}</p>
+            </div>
+            
+            <div class="">
+                <p class=""><b>Sigla: </b>{{item.sigla}}</p>
+                <p class=""><b>Área: </b>{{item.area}}</p>
+                <p class=""><b>Responsavel: </b>{{item.responsavel}}</p>
+                <p class=""><b>Orgao Responsavel: </b>{{item.orgao_responsavel}}</p>
+                <p class=""><b>Fábrica Responsével: </b>{{item.fabrica_responsavel}}</p>
+            </div>
+        </li>
+    </ul>
+    <ul class="flex w-full" *ngFor="let item of list">
+        <li class="card-body shadow-stone-900 border-gray-800 shadow-md transition ease-in duration-100 rounded-2xl p-4">
+            <div class="flex flex-row items-start justify-start gap-2 pb-4">
+                <h5 class="card-title">{{item.nome}}</h5>
+                <p class="card-text"> - {{item.descricao}}</p>
+            </div>
+            
+            <div class="">
+                <p class=""><b>Sigla: </b>{{item.sigla}}</p>
+                <p class=""><b>Área: </b>{{item.area}}</p>
+                <p class=""><b>Responsavel: </b>{{item.responsavel}}</p>
+                <p class=""><b>Orgao Responsavel: </b>{{item.orgao_responsavel}}</p>
+                <p class=""><b>Fábrica Responsével: </b>{{item.fabrica_responsavel}}</p>
+            </div>
+        </li>
+    </ul>
+    <ul class="flex w-full" *ngFor="let item of list">
+        <li class="card-body shadow-stone-900 border-gray-800 shadow-md transition ease-in duration-100 rounded-2xl p-4">
+            <div class="flex flex-row items-start justify-start gap-2 pb-4">
+                <h5 class="card-title">{{item.nome}}</h5>
+                <p class="card-text"> - {{item.descricao}}</p>
+            </div>
+            
+            <div class="">
+                <p class=""><b>Sigla: </b>{{item.sigla}}</p>
+                <p class=""><b>Área: </b>{{item.area}}</p>
+                <p class=""><b>Responsavel: </b>{{item.responsavel}}</p>
+                <p class=""><b>Orgao Responsavel: </b>{{item.orgao_responsavel}}</p>
+                <p class=""><b>Fábrica Responsével: </b>{{item.fabrica_responsavel}}</p>
+            </div>
         </li>
     </ul>
 </div>

@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
-import { Users } from '../../interfaces/users';
+import { Interface_Users } from '../../interfaces/interface_users';
 import { TesteService } from '../../service/teste.service';
 import { OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { dados_sistemas } from '../../dados/dados_sistemas';
+import { Interface_Sistemas } from '../../interfaces/interface_sistemas';
 
 
 @Component({
@@ -14,14 +16,12 @@ import { CommonModule } from '@angular/common';
 
 export class SistemasComponent implements OnInit {
   
-  constructor( private call: TesteService ) {}
+  constructor() {}
 
-  list: Users[] = []
+  list: any[] = [];
 
   ngOnInit() {
-    this.call.getAll().subscribe(
-      (users: Users[]) => this.list = users
-    ) 
+    this.list = dados_sistemas
   }
 
 }
