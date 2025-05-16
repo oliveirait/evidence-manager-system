@@ -15,9 +15,16 @@ import { MatIconModule } from '@angular/material/icon';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
+
 export class AppComponent {
   title = 'evidence-manager';
   tituloDescricao = 'Sistema de gestão de sprints do SEFIN'
+
+  isCollapsed: boolean = false
+
+  toggleMenu () {
+    this.isCollapsed = !this.isCollapsed
+  }
 
   headerMenu = [
     {name: 'Home', route: '', icon: 'home'},

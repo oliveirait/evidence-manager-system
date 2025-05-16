@@ -1,5 +1,5 @@
 
-export const dados_sistemas2 = [
+export const dados_sistemas = [
     "ARRECADAÇÃO WEB",
     "ARRECADAÇÃO",
     "ARRECINTEGRA WEB",
@@ -12,7 +12,15 @@ export const dados_sistemas2 = [
     "SMR"
 ]
 
-export const dados_sistemas = [
+export const dados_status_pf = [
+    "OK",
+    "FALTA LUCIANA ACEITAR",
+    "FALTA FELIPE REVISAR",
+    "FALTA FABRICA RETIFICAR",
+    "DÚVIDA"
+]
+
+export const dados_sistemas2 = [
     {  
         nome: "ARRECADAÇÃO WEB",
         descricao: "Sistema de Arrecadação Web",

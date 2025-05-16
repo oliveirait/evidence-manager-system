@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Interface_Users } from '../interfaces/interface_users';
+import { SprintProps, StatusPropsReturn } from '../interfaces/interface_sprint';
 
 
 @Injectable({
@@ -12,9 +12,14 @@ export class TesteService {
 
   constructor( private http: HttpClient ) {}
 
-  private urlApi: string = "https://fakestoreapi.com/users"
+  private urlApi: string = "http://localhost:3333/"
 
-  getAll (): Observable<Interface_Users[]> {
-    return this.http.get<Interface_Users[]>(this.urlApi)
+  getAll (): Observable<StatusPropsReturn> {
+    return this.http.get<StatusPropsReturn>(this.urlApi+"sprint")
   }
+
+  postAll (data: any): Observable<StatusPropsReturn> {
+    return this.http.post<StatusPropsReturn>(this.urlApi+"sprint", data)
+  }
+
 }

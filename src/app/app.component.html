@@ -1,15 +1,35 @@
 
 
-<div class="overflow-hidden flex flex-row h-screen w-screen">
+<div class="overflow-hidden flex flex-row h-screen w-screen ">
     
-    <div class=" bg-gray-800 text-white p-2 w-64 transform lg:translate-x-0 transition-transform duration-300 z-40">
-        <div class="flex flex-row justify-between w-full mb-2 p-3">
-            <h2 class="text-2xl font-bold cursor-pointer" routerLink=''>Menu</h2>
-            <button class="p-2 bg-gray-800 text-white rounded mb-4"> ☰ </button>
+    <div 
+        [ngClass]=" isCollapsed ? 'w-0 transition-all duration-300 ease-in-out overflow-hidden' : 'w-64 transition-all duration-300 ease-in-out' " 
+        class="bg-gray-800 text-white p-2 z-40'">
+
+        <div 
+            
+            class="flex flex-row items-center justify-between w-full mb-2 p-3 ">
+            <h2 
+                class="'text-2xl font-bold cursor-pointer'" 
+                routerLink=''>Menu</h2>
+
+            <button 
+                (click)="toggleMenu()" 
+                class="p-2 text-white rounded text-2xl font-bold cursor-pointer">
+                
+                <mat-icon fontIcon="menu"></mat-icon>
+            </button>
         </div>
 
-        <ul class="space-y-1" *ngFor="let item of headerMenu">
-            <li routerLink={{item.route}} class="cursor-pointer w-full ease-in duration-200 text-white hover:bg-zinc-600 rounded-xl p-2">
+
+        <ul 
+            class="space-y-1 flex items-center justify-center " 
+            *ngFor="let item of headerMenu">
+
+            <li 
+                routerLink={{item.route}} 
+                class="cursor-pointer w-full ease-in duration-300 text-white hover:bg-zinc-600 rounded-xl p-2">
+                
                 <div class="flex items-center justify-start gap-4">
                     <mat-icon fontIcon={{item.icon}}></mat-icon>
                     {{item.name}}
@@ -19,9 +39,33 @@
     </div>
 
 
-    <div class="flex flex-col flex-1 h-full bg-gray-100">
-        <div class="h-16 bg-gray-800 border-b border-gray-800 flex items-center justify-center">
-            <h1 class="text-sm text-center text-white p-2 lead">{{tituloDescricao}}</h1>
+    <div class="flex flex-col flex-1 h-screen w-screen bg-gray-100">
+        <div [ngClass]=" isCollapsed ? 'flex items-center justify-start' : '' "class="h-16 bg-gray-800 border-b border-gray-800 flex items-center justify-center  ">
+            <button 
+                (click)="toggleMenu()" 
+                [ngClass]=" isCollapsed ? 'visible flex items-center shadow-md shadow-white h-full' : 'hidden text-2xl font-bold cursor-pointer'" 
+                class="p-2 text-white rounded-none bg-black">
+                
+                <mat-icon class="m-2" fontIcon="south"></mat-icon>
+            </button>
+    
+            <ul 
+                [ngClass]=" isCollapsed ? 'opacity-100 transition-opacity duration-500 ease-in ' : 'hidden' " 
+                class="gap-4 mt-3 flex items-center justify-center " 
+                *ngFor="let item of headerMenu">
+                <li 
+                    routerLink={{item.route}} 
+                    class="cursor-pointer w-full text-white hover:bg-zinc-600 rounded-xl p-2">
+                    
+                    <div class="flex items-center justify-center gap-4">
+                        <mat-icon fontIcon={{item.icon}}></mat-icon>
+                        {{item.name}}
+                    </div>
+                </li>
+            </ul>
+            <h1 
+                [ngClass]=" isCollapsed ? 'opacity-0 transition-opacity duration-0 ease-in-out' : 'opacity-100 transition-opacity duration-500 ease-in' " 
+                class="text-sm text-center text-white p-2 lead mt-2">{{tituloDescricao}}</h1>
         </div>
 
         <div class="flex-1 overflow-auto p-4">
@@ -30,4 +74,6 @@
     </div>
 
 </div>
+
+
 

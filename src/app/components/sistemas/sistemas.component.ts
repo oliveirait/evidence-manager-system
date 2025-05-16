@@ -1,10 +1,7 @@
 import { Component } from '@angular/core';
-import { Interface_Users } from '../../interfaces/interface_users';
-import { TesteService } from '../../service/teste.service';
 import { OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { dados_sistemas } from '../../dados/dados_sistemas';
-import { Interface_Sistemas } from '../../interfaces/interface_sistemas';
+import { dados_sistemas2 } from '../../dados/dados_sistemas';
 
 
 @Component({
@@ -21,7 +18,7 @@ export class SistemasComponent implements OnInit {
   list: any[] = [];
 
   ngOnInit() {
-    this.list = dados_sistemas
+    this.list = dados_sistemas2
   }
 
 }
